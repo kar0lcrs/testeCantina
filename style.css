@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*---Reseta a estilização padrão---*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FDF8F2;
+    font-family: 'Poppins', sans-serif;
+}
+
+section{
+    padding:8rem 8%;
+}
+/*---INÍCIO ESTILIZAÇÃO DO MENU---*/
+.logo img {
+    width: auto;
+    height: 17vh;
+    border-radius: 8px;
+    transition:.35s;
+}
+
+.menu.pequeno .logo img{
+    height:12vh;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-nome {
+    display: flex;
+    align-items: center;
+}
+
+.nome {
+    display: flex;
+    flex-direction:column;
+    color: #130b07;
+}
+
+.nome span {
+    color: #976d4f;
+}
+
+nav {
+    display: flex;
+    align-items:center;
+    gap:4rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    list-style: none;
+}
+
+nav span {
+    color:#ededed;
+}
+
+.menu a {
+    text-decoration: none;
+    color:#ad9566;
+    transition: .3s;
+}
+
+nav a:hover {
+    color:#130b07;
+}
+
+.login {
+    background:#6e462a;
+    padding: 10px 15px;
+    border-radius: 10vh;
+}
+
+.carrinho img {
+    height:5.5vh;
+    width:auto;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+
+    margin: 0px auto;
+
+    background-color: #FDF8F2;
+
+    padding: 75px 60px;
+
+    box-shadow: 0 8px 20px rgba(88, 88, 88, 0.274);
+
+    width:100%;
+    height:80px;
+    z-index:1000;
+    transition: all .35s ease;
+}
+
+.menu.pequeno{
+    padding:45px 60px;
+}
+
+/*---FIM DA ESTILIZAÇÃO DO MENU---*/
+
+/*---INÍCIO ESTILIZAÇÃO DA BARRA LATERAL(CARRINHO DE COMPRAS)---*/
+
+.carrinho-lateral {
+    position:fixed;
+    top:0;
+    z-index:1000;
+    width:350px;
+    height:100%;
+    background:#ededed;
+    transition:right 0.3s ease-in-out;
+    right:0;
+    z-index: 1000;
+    padding:20px;
+    border-radius:20px;
+    display:none;
+}
+
+.carrinho-lateral.aberto{
+    right:0;
+}
+
+/*---INICIO ESTILIZAÇÃO DO BANNER---*/
+
+.banner {
+    background: 
+    linear-gradient(rgb(43, 18, 6),rgba(94, 56, 26, 0.315)),
+    url(img/banner.jpeg);
+
+    height: 90vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-top: 90px;
+}
+
+.conteudo-banner {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width:700px;
+    color:#ededed;
+    font-size: 3.5vh;
+    gap: 20px;
+}
+
+.conteudo-banner a {
+    color: #ededed;
+    text-decoration: none;
+}
+
+.status {
+    padding:5px 20px;
+    font-size: 20px;
+    border-radius: 80vh;
+    background: linear-gradient(rgba(117, 117, 117, 0.45));
+    border: 1px solid rgb(204, 204, 204);
+}
+
+.botao {
+    text-decoration: none;
+    background: linear-gradient(rgba(117, 117, 117, 0.45));
+    border-radius: 25vh;
+    border: 1px solid rgb(204, 204, 204);
+    align-items: center;
+    padding: 5px 20px;
+}
+
+/*---FIM DA ESTILIZAÇÃO DO BANNER---*/
+
+/*---INICIO ESTILIZAÇÃO DO CONTEÚDO PRINCIPAL---*/
+
+/*---Estilização do Cardápio---*/
+
+.texto {
+    text-align: center;
+    color: #6e462a;
+}
+
+.texto h1 {
+    color: #130b07;
+}
+
+.foto-comida {
+    width:40px;
+    border-radius: 5vh;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin-top:60px;
+    flex-wrap:wrap;
+    border: 5px double #916748c2;
+    border-radius: 1vh;
+    padding: 40px;
+    background:#ffedd8;
+}
+
+.card{
+    width:300px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+    transition:.3s;
+    color: #81482c;
+    display:flex;
+    flex-direction:column;
+}
+
+.card button {
+    border:none;
+    cursor:pointer;
+    margin-top:auto;
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+.info{
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.info h3{
+    margin-bottom:10px;
+}
+
+.info p{
+    color:#505050;
+    font-size:14px;
+    line-height:22px;
+    margin-bottom:20px;
+}
+
+.info h4{
+    color:#6e462a;
+    font-size:22px;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+/*---Fim da estilização do Cardápio---*/
+
+/*---Estilização do Sobre nós---*/
+
+.sobre {
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+}
+
+.texto-sobre p {
+    text-align:left;
+    color:#130b07;
+    margin-bottom:24px;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.titulo-sobre h3,
+.titulo-sobre h1 {
+    text-align:center;
+}
+
+.titulo-sobre h1{
+    color:#130b07
+}
+
+.titulo-sobre h3{
+    color:#6e462a;
+}
+
+.fotos-escola img {
+    height:30vh;
+    width: 20rem;
+    object-fit:cover;
+}
+
+.fotos-escola {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap: 40px;
+    padding-top: 18px;
+}
+
+/*---Fim da estilização da seção Sobre nós---*/
+
+/*---Estilização da seção Contato---*/
+
+.contato {
+    display:grid;
+    background-color:#6e462a;
+    padding: 10rem 3rem;
+    gap:20px;
+}
+
+.conteudo-contato {
+    display:flex;
+    gap: 40px;
+}
+
+.titulo-contato {
+    display:flex;
+    flex-direction:column;
+    text-align: center;
+}
+
+.titulo-contato h3 {
+    color:#e4e4e4;
+}
+
+.titulo-contato h1 {
+    color:#ededed;
+}
+
+.ctt-containers {
+    display:flex;
+    flex-direction:column;
+    gap:5vh;
+}
+
+.ctt {
+    background-color:#FDF8F2;
+    padding: 2vh 3vh;
+    border-radius: 2vh;
+    color:#130b07
+}
+

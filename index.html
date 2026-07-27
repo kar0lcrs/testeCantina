@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantina Lindaura</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="menu">
+        <a href="index.html">
+            <div class="logo-nome">
+                <div class="logo">
+                    <img class="logo-lindaura" src="img/logotipo.jpeg" alt="Logo do Colégio Lindaura">
+                </div>
+            </div>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#sobre-nós">Sobre nós</a></li>
+            </ul>
+
+                <div class="carrinho">
+                    <img src="img/carrinho.png">
+                </div>
+
+            <a href="#login">
+            <div class="login">
+                <h3><strong><span>Login</span></strong></h3>  
+            </div>
+            </a>
+        </nav>
+    </header>
+
+    <aside class="carrinho-lateral">
+        <h2>Meu pedido</h2>
+        <div id="lista-carrinho">
+            <p>teste</p>
+        </div>
+
+        <div class="rodape-carrinho">
+            <h3>Total: R$0,00</h3>
+            <button>Finalizar pedido</button>
+        </div>
+    </aside>
+
+    <main>
+    <section class="banner">
+        <div class="conteudo-banner">
+            <div class="status">    
+               <p>Cantina Online · Aceitando pedidos agora</p>
+            </div>
+
+            <div class="bem-vindo">
+                <h1>Bem-vindo(a) à cantina do Colégio Lindaura!</h1>
+                <p>Peça seus lanches favoritos com antecedência e retire rapidinho na cantina. Sem filas, sem espera.</p>
+            
+            </div>
+
+            <div class="botao">
+                <a href="chat.html">Faça seu pedido aqui!</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cardapio" id="menu">
+        <div class="texto">
+            <h3>O QUE TEMOS HOJE</h3>
+            <h1>Cardápio do dia</h1>
+            <p>Itens fresquinhos preparados com carinho todos os dias pela equipe da Cantina Lindaura.</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <img class="foto-comida" src="https://i.ytimg.com/vi/sCSFYxahUcE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCn24nByRV32887byOzYsh7w2CatA">
+
+                <div class="info">
+                    <h3>Esfirra de Frango</h3>
+                    <p>Massa caseira super macia e douradinha, recheada com frango desfiado suculento, temperado na medida certa e muito cremoso.</p>
+                    <h4>R$8,00</h4>
+                    <button class="adicionar" data-nome="Esfirra de frango" data-preco="8">Adicionar ao carrinho</button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img class="foto-comida" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf9Lg30aMLUw92haHFQf52xt29nHYWjsFK5lobQke6vA&s=10">
+
+                <div class="info">
+                    <h3>Esfirra de Chocolate</h3>
+                    <p>Massa fofinha e quentinha, assada na hora e recheada com um cremoso chocolate ao leite que derrete na boca.</p>
+                    <h4>R$8,00</h4>
+                    <button class="adicionar" data-nome="Esfirra de chocolate" data-preco="8">Adicionar ao carrinho</button>
+                </div>
+            </div>    
+
+            <div class="card">
+                <img class="foto-comida" src="https://sabores-new.s3.amazonaws.com/public/2024/11/esfihas-de-calabresa.jpg">
+
+                <div class="info">
+                    <h3>Esfirra de Calabresa</h3>
+                    <p>Massa super macia e quentinha, recheada com uma calabresa moída bem temperadinha e um toque especial de cebola.</p>
+                    <h4>R$8,00</h4>
+                    <button class="adicionar" data-nome="Esfirra de Calabresa" data-preco="8">Adicionar ao carrinho</button>
+                </div>
+            </div>    
+
+            <div class="card">
+                <img class="foto-comida" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfbsGFYD1eyHqaHd1GjIwP-J9h-4Ge5mam_kXxCVT__Q&s=10">
+
+                <div class="info">
+                    <h3>Hamburgão</h3>
+                    <p>A combinação perfeita que todo mundo ama! Uma massa fofinha, dourada e quentinha que esconde um recheio generoso: um hambúrguer suculento coberto com muito queijo cheddar cremoso e derretido. </p>
+                    <h4>R$8,00</h4>
+                    <button class="adicionar" data-nome="Hamburgão" data-preco="8">Adicionar ao carrinho</button>
+                </div>
+            </div>    
+
+            <div class="card">
+                <img class="foto-comida" src="https://static.itdg.com.br/images/640-400/bfbc5532e36840b2a57e3849d82ad7a5/355179-original.jpg">
+
+                <div class="info">
+                    <h3>Bolo no Pote</h3>
+                    <p>Camadas perfeitas de bolo super fofinho e molhadinho, intercaladas com um recheio generoso e muito cremoso. Ele vem no potinho ideal para comer de colher a qualquer hora do intervalo</p>
+                    <h4>R$10,00</h4>
+                    <button class="adicionar" data-nome="Bolo no Pote" data-preco="10">Adicionar ao carrinho</button>
+                </div>
+            </div>    
+
+            <div class="card">
+                <img class="foto-comida" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMskOiZ8giMeUDwoKYE6B53w9XQj6orP86c8V8LLmyqQ&s=10">
+                <div class="info">
+                    <h3>Suco</h3>
+                    <p>A parceria perfeita para qualquer salgado ou doce! Nossos sucos são preparados para garantir o máximo de sabor e refrescância. Uma opção leve, deliciosa e cheia de vitaminas para hidratar a energia da garotada durante o intervalo.</p>
+                    <h4>R$8,00</h4>
+                    <button class="adicionar" data-nome="Suco" data-preco="8">Adicionar ao carrinho</button>
+                </div>
+            </div>
+
+        </div>    
+    </section>
+
+    <section class="sobre" id="sobre-nós">
+        <div class="titulo-sobre">
+            <h3>COMO TUDO COMEÇOU</h3>
+            <h1>Sobre a Cantina Lindaura</h1>
+        </div>
+
+        <div class="texto-sobre">
+            <p>
+                Quem estuda no Colégio Lindaura sabe como o recreio pode passar voando. Com apenas 15 minutos de intervalo, era comum gastar boa parte desse tempo na fila da cantina. E não era só isso: quase todo dia aconteciam furos de fila, e muitas vezes o salgado que você queria acabava justamente quando chegava a sua vez.
+            </p>
+
+            <p>
+                Pensando em melhorar essa situação, em 2026 as equipes do 2º B do curso de Desenvolvimento de Sistemas receberam a missão de desenvolver soluções para modernizar a cantina da escola. Cada equipe criou uma proposta, e este site é o resultado do trabalho da Equipe Phoenix.
+            </p>
+
+            <p>
+                Nosso objetivo foi tornar a experiência na cantina muito mais prática e organizada. Aqui, os alunos podem consultar o cardápio, fazer seus pedidos com antecedência e aproveitar muito melhor o recreio, sem perder tempo em filas enormes. Afinal, ninguém merece passar metade do intervalo esperando para comprar um salgado!
+            </p>
+        </div>
+
+        <div class="fotos-escola">
+            <img src="https://scontent.fcwb7-1.fna.fbcdn.net/v/t51.82787-15/583752018_18409069672190499_6643189023765808552_n.webp?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s1080x1080&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=CyhXT15HA9cQ7kNvwH7r4wz&_nc_oc=AdrxiwzZ1okJ-hVAunu_IoeRXybZQhUsQg4wff_mMIK2TtpRQlVMQwaMrSxoe1KErqj4IWSdHcTUoCq8nTjpj55C&_nc_zt=23&_nc_ht=scontent.fcwb7-1.fna&_nc_gid=0PYuhk0VH8VoBKZ7cPyWCQ&_nc_ss=7b289&oh=00_AQBb-BZ4oJ-wtNfU3Svh60DQhTwVzojyOC9pEvioUoTMXg&oe=6A6B18E3">
+            <img src="https://scontent.fcwb7-1.fna.fbcdn.net/v/t51.82787-15/581158311_18409069681190499_5552708375045996258_n.webp?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s1080x1080&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=tRXtMO9aX2cQ7kNvwGQZVQD&_nc_oc=Adq0PWALwM7A8mzNyAXUcRvcTOZ07ToJ88sdw16gKsJU6bWgc16rMR6SN3ejIFVFwGQLBFYimLlepHTpXfLq5jCn&_nc_zt=23&_nc_ht=scontent.fcwb7-1.fna&_nc_gid=neQSQHEGAoIWFh2RCX5uRg&_nc_ss=7b289&oh=00_AQBh52rAaRVjLBXLnHu6lWiD67E-Ia8GAojqJOol1CYnGw&oe=6A6B3849">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTmwEr2u29BpwsDKFd4KxYLFJyaZA4y_9lykowHVExDw&s=10">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxIL3RNefifXfnMAy0cHecHr-zCF-Pc9qFLMDvvUZmtg&s=10">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpJYsXayURQo9y55P6WauXTxFtB_c1hSiKokSqo0wQ_tHbJcT8jfRkF-k&s=10">
+            <img src="https://scontent.fcwb7-1.fna.fbcdn.net/v/t51.82787-15/588428122_18411331504190499_8317469732934962033_n.webp?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s1080x1080&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=9-WLvouIa5wQ7kNvwFFc0o3&_nc_oc=AdrgANn9GAgqRRBbA6fuKlfTEbx1rEiltM0_TZZBECRkwnP57rl8kgD_UnA6VK8ouho0gow8KcJOV_tP3br-r016&_nc_zt=23&_nc_ht=scontent.fcwb7-1.fna&_nc_gid=3FjCHEoB59blMMqwttIqfw&_nc_ss=7b289&oh=00_AQBoe97jsjZjFuOvWSQov1TD4M9QxHRQ8mpPvsS1tT3GIA&oe=6A6BE2E7">
+        </div>
+    </section>
+
+    
+    <section class="contato" id="contato">
+
+        <div class="titulo-contato">
+            <h3>CONTATO E LOCALIZAÇÃO</h3>
+            <h1>Para dúvidas, entre em contato conosco agora</h1>
+        </div>
+
+        <div class="conteudo-contato">
+            <div class="ctt-containers">
+                <div class="ctt">
+                    <h3>Localização</h3>
+                    <p>Rua Octávio Cim, 2201 - Afonso Pena, São José dos Pinhais - PR, CEP 83050-420</p>
+                </div>
+
+                <div class="ctt">
+                    <h3>Horário de Funcionamento</h3>
+                    <p>Intervalo: 09h30 – 09h45</p>
+                </div>
+
+                <div class="ctt">
+                    <h3>Telefone</h3>
+                    <p>(41) 3382-5641</p>
+                </div>
+
+                <div class="ctt">
+                    <h3>E-mail</h3>
+                    <p>##############</p>
+                </div>
+
+                <div class="ctt">
+                    <h3>Redes sociais</h3>
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                </div>
+            </div>
+            
+            <div class="mapa-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d347.103335941244!2d-49.17228226067669!3d-25.501757608536643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcf0fa63f5dcdf%3A0xabffc9b368410955!2sLindaura%20R%20Lucas%2C%20C%20E%20Prof-Ef%20M!5e0!3m2!1spt-BR!2sbr!4v1785097895796!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+    </section>
+    
+    </main>
+</body>
+</html>
