@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 /*---Reseta a estilização padrão---*/
 * {
     box-sizing: border-box;
@@ -9,7 +11,15 @@
 
 body {
     background-color: #FDF8F2;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Manrope','Poppins', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Manrope','Poppins', sans-serif;
+}
+
+p {
+  font-family: 'Plus Jakarta Sans', 'Manrope', 'Poppins', sans-serif;
 }
 
 section{
@@ -18,13 +28,13 @@ section{
 /*---INÍCIO ESTILIZAÇÃO DO MENU---*/
 .logo img {
     width: auto;
-    height: 17vh;
+    height: 100px;
     border-radius: 8px;
     transition:.35s;
 }
 
 .menu.pequeno .logo img{
-    height:12vh;
+    height:60px;
 }
 
 .logo {
@@ -56,12 +66,8 @@ nav {
 nav ul {
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 70px;
     list-style: none;
-}
-
-nav span {
-    color:#ededed;
 }
 
 .menu a {
@@ -75,14 +81,20 @@ nav a:hover {
 }
 
 .login {
+    color:#ededed;
     background:#6e462a;
-    padding: 10px 15px;
+    padding: 12px 22px;
+    font-weight: 600;
     border-radius: 10vh;
 }
 
+.carrinho {
+  cursor: pointer;
+}
+
 .carrinho img {
-    height:5.5vh;
-    width:auto;
+    height:36px;
+    width:36px;
 }
 
 .menu {
@@ -97,7 +109,7 @@ nav a:hover {
 
     background-color: #FDF8F2;
 
-    padding: 75px 60px;
+    padding: 75px 100px;
 
     box-shadow: 0 8px 20px rgba(88, 88, 88, 0.274);
 
@@ -118,16 +130,15 @@ nav a:hover {
 .carrinho-lateral {
     position:fixed;
     top:0;
-    z-index:1000;
     width:350px;
-    height:100%;
+    height:100vh;
     background:#ededed;
-    transition:right 0.3s ease-in-out;
-    right:0;
-    z-index: 1000;
+    transition:right 0.35s ease;
+    box-shadow: -10px 0 25px rgba(0,0,0,.2);
+    right:-360px;
     padding:20px;
     border-radius:20px;
-    display:none;
+    z-index: 1000;
 }
 
 .carrinho-lateral.aberto{
@@ -158,7 +169,8 @@ nav a:hover {
     text-align: center;
     max-width:700px;
     color:#ededed;
-    font-size: 3.5vh;
+    font-size: 1.2rem;
+    padding: 20px;
     gap: 20px;
 }
 
@@ -200,8 +212,10 @@ nav a:hover {
 }
 
 .foto-comida {
-    width:40px;
+    width:100%;
+    height:220px;
     border-radius: 5vh;
+    object-fit:cover;
 }
 
 .cards{
@@ -213,12 +227,12 @@ nav a:hover {
     border: 5px double #916748c2;
     border-radius: 1vh;
     padding: 40px;
-    background:#ffedd8;
+    background:#fff5e9;
 }
 
 .card{
     width:300px;
-    background:white;
+    background:#fafafa;
     border-radius:20px;
     overflow:hidden;
     box-shadow:0 8px 20px rgba(0,0,0,.12);
@@ -229,9 +243,13 @@ nav a:hover {
 }
 
 .card button {
+    margin-top:auto;
+    padding:14px;
+    border-radius:12px;
     border:none;
     cursor:pointer;
     margin-top:auto;
+    font-size:1.0rem;
 }
 
 .card img{
@@ -256,12 +274,14 @@ nav a:hover {
     color:#505050;
     font-size:14px;
     line-height:22px;
+    flex: 1;
     margin-bottom:20px;
 }
 
 .info h4{
     color:#6e462a;
     font-size:22px;
+    margin-bottom:18px;
 }
 
 .card:hover{
@@ -300,7 +320,7 @@ nav a:hover {
 }
 
 .fotos-escola img {
-    height:30vh;
+    height:15rem;
     width: 20rem;
     object-fit:cover;
 }
@@ -356,3 +376,90 @@ nav a:hover {
     color:#130b07
 }
 
+/*---Animação dos elementos---*/
+
+.animar{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s ease;
+}
+
+.animar.apareceu{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/*---Responsividade---*/
+
+@media (max-width:768px){
+
+.banner{
+
+    height:100vh;
+    margin-top:70px;
+}
+
+.conteudo-banner{
+
+    max-width:90%;
+    font-size:1rem;
+    gap:20px;
+}
+
+.conteudo-banner h1{
+
+    font-size:2rem;
+}
+
+.conteudo-banner p{
+
+    font-size:1rem;
+}
+
+.menu{
+
+    padding:20px;
+}
+
+nav{
+    font-size: 0.5rem;
+    gap:15px;
+}
+
+nav ul{
+
+    gap:15px;
+}
+
+.logo img {
+  height: 70px;
+}
+
+.cards{
+
+    padding:20px;
+}
+
+.card{
+
+    width:100%;
+    max-width:320px;
+}
+
+.conteudo-contato{
+
+    flex-direction:column;
+}
+
+.mapa-container iframe{
+    width:100%;
+}
+
+.fotos-escola img{
+
+    width:100%;
+    max-width:320px;
+    height:auto;
+}
+
+}

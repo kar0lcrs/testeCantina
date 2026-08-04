@@ -1,16 +1,60 @@
+/*---Animação dos Elementos---*/
+const elementos = document.querySelectorAll(".animar");
+
+const observador = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+        if(entry.isIntersecting){
+            entry.target.classList.add("apareceu");
+        }
+    });
+});
+
+elementos.forEach(function(elemento){
+    observador.observe(elemento);
+});
+
+
+/*---Adiciona itens ao carrinho---*/
 const botoes = document.querySelectorAll(".adicionar");
 const listaCarrinho = document.querySelector("#lista-carrinho");
+const textoTotal = document.querySelector("#total");
+let total = 0;
 
 botoes.forEach(function(botao){
+
     botao.addEventListener("click", function(){
 
         const nome = botao.dataset.nome;
-        const preco = botao.dataset.preco;
-        const item = document.createElement("p");
+        const preco = Number(botao.dataset.preco);
 
-        item.textContent = nome + " - R$" + preco
-        listaCarrinho.appendChild(item)
+        total += preco;
+        textoTotal.textContent =
+            `Total: R$${total.toFixed(2).replace(".", ",")}`;
+
+        const item = document.createElement("div");
+
+        item.innerHTML = `
+            <span>${nome} - R$${preco.toFixed(2).replace(".", ",")}</span>
+            <button class="remover">X</button>
+        `;
+
+        listaCarrinho.appendChild(item);
+
+        const remover = item.querySelector(".remover");
+
+        remover.addEventListener("click", function(){
+
+            total -= preco;
+
+            textoTotal.textContent =
+                `Total: R$${total.toFixed(2).replace(".", ",")}`;
+
+            item.remove();
+
+        });
+
     });
+
 });
 
 
@@ -30,4 +74,13 @@ window.addEventListener("scroll", function(){
 
     }
 
+});
+
+/*Abre a lista do carrinho*/
+
+const carrinho = document.querySelector(".carrinho");
+const lateral = document.querySelector(".carrinho-lateral");
+
+carrinho.addEventListener("click", () => {
+    lateral.classList.toggle("aberto");
 });
