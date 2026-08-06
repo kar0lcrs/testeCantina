@@ -141,9 +141,41 @@ nav a:hover {
     z-index: 1000;
 }
 
+.topo-carrinho {
+    display:flex;
+    justify-content:space-between;
+}
+
 .carrinho-lateral.aberto{
     right:0;
 }
+
+.item-carrinho {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#fff;
+    margin-bottom:10px;
+    padding:10px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.remover {
+    width: 20px;
+    height: 20px;
+    border-radius:2px;
+    background:#b33a3a;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+    border:none;
+}
+
+.remover:hover {
+    background:#922b2b;
+}
+
 
 /*---INICIO ESTILIZAÇÃO DO BANNER---*/
 
@@ -224,7 +256,7 @@ nav a:hover {
     gap:40px;
     margin-top:60px;
     flex-wrap:wrap;
-    border: 5px double #916748c2;
+    border: 3px double #916748c2;
     border-radius: 1vh;
     padding: 40px;
     background:#fff5e9;
