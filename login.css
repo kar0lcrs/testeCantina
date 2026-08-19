@@ -1,0 +1,252 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background: #FDF8F2;
+    color: #130b07;
+}
+
+
+/*--- Página inteira ---*/
+
+.pagina-login {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+
+/*--- Caixa de login ---*/
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+
+    background: #fff;
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/*--- Botão voltar ---*/
+
+.voltar {
+    display: inline-block;
+
+    margin-bottom: 30px;
+
+    text-decoration: none;
+
+    color: #6e462a;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.voltar:hover {
+    color: #130b07;
+}
+
+
+/*--- Cabeçalho ---*/
+
+.cabecalho-login {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.cabecalho-login img {
+    width: 75px;
+    height: 75px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+}
+
+.cabecalho-login h1 {
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.cabecalho-login p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+/*--- Campos ---*/
+
+.formulario-login {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.campo label {
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #3f2a20;
+}
+
+.campo input {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid #d8d0c8;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.campo input:focus {
+    border-color: #6e462a;
+
+    box-shadow: 0 0 0 3px rgba(110, 70, 42, 0.1);
+}
+
+
+/*--- Lembrar / esquecer senha ---*/
+
+.opcoes-login {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 12px;
+}
+
+.opcoes-login label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+.opcoes-login a {
+    color: #6e462a;
+
+    text-decoration: none;
+}
+
+.opcoes-login a:hover {
+    text-decoration: underline;
+}
+
+
+/*--- Botão entrar ---*/
+
+.botao-entrar {
+    border: none;
+
+    background: #6e462a;
+
+    color: #fff;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.botao-entrar:hover {
+    background: #573720;
+
+    transform: translateY(-2px);
+}
+
+
+/*--- Cadastro ---*/
+
+.cadastro {
+    text-align: center;
+
+    margin-top: 30px;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
+    font-size: 13px;
+
+    color: #666;
+}
+
+.cadastro a {
+    color: #6e462a;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.cadastro a:hover {
+    text-decoration: underline;
+}
+
+
+/*--- Responsividade ---*/
+
+@media (max-width: 500px) {
+
+    .login-container {
+        padding: 30px 25px;
+    }
+
+    .opcoes-login {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+}

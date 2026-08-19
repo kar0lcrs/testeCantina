@@ -15,57 +15,132 @@ elementos.forEach(function(elemento){
 
 
 /*---Adiciona itens ao carrinho---*/
-const vazio= document.querySelector("#vazio");
 const botoes = document.querySelectorAll(".adicionar");
 const listaCarrinho = document.querySelector("#lista-carrinho");
 const textoTotal = document.querySelector("#total");
+
 let total = 0;
 
 botoes.forEach(function(botao){
 
-    botao.addEventListener("click", () => {
+    botao.addEventListener("click", function(){
 
         const nome = botao.dataset.nome;
         const preco = Number(botao.dataset.preco);
 
-        if (vazio) {
-            vazio.remove();
-        }
+        // Procura se esse produto já está no carrinho
+        const itens = listaCarrinho.querySelectorAll(".item-carrinho");
 
-        total += preco;
-        textoTotal.textContent =
-            `Total: R$${total.toFixed(2).replace(".", ",")}`;
+        let itemExistente = null;
 
-        const item = document.createElement("div");
-        item.classList.add("item-carrinho");
+        itens.forEach(function(item){
 
-        item.innerHTML = `
-            <span>${nome} - R$${preco.toFixed(2).replace(".", ",")}</span>
-            <button class="remover">X</button>
-        `;
-
-        listaCarrinho.appendChild(item);
-
-        const remover = item.querySelector(".remover");
-
-        remover.addEventListener("click", () => {
-
-            total -= preco;
-
-            textoTotal.textContent =
-                `Total: R$${total.toFixed(2).replace(".", ",")}`;
-
-            item.remove();
-
-            if(listaCarrinho.children.length === 0){
-                listaCarrinho.innerHTML = '<p id="vazio">Seu carrinho está vazio.</p>';
+            if(item.dataset.nome === nome){
+                itemExistente = item;
             }
 
         });
 
+        // Se o produto já existe
+        if(itemExistente){
+
+            const quantidade = itemExistente.querySelector(".quantidade");
+
+            quantidade.textContent =
+                Number(quantidade.textContent) + 1;
+
+        }
+
+        // Se o produto ainda não existe
+        else{
+
+            const item = document.createElement("div");
+
+            item.classList.add("item-carrinho");
+
+            item.dataset.nome = nome;
+            item.dataset.preco = preco;
+
+            item.innerHTML = `
+                <div class="info-item">
+                    <span>${nome}</span>
+                    <small>R$${preco.toFixed(2).replace(".", ",")} cada</small>
+                </div>
+
+                <div class="controle-quantidade">
+                    <button class="diminuir">−</button>
+
+                    <span class="quantidade">1</span>
+
+                    <button class="aumentar">+</button>
+                </div>
+            `;
+
+            listaCarrinho.appendChild(item);
+
+            const aumentar = item.querySelector(".aumentar");
+            const diminuir = item.querySelector(".diminuir");
+            const quantidade = item.querySelector(".quantidade");
+
+            aumentar.addEventListener("click", function(){
+
+                quantidade.textContent =
+                    Number(quantidade.textContent) + 1;
+
+                atualizarTotal();
+
+            });
+
+            diminuir.addEventListener("click", function(){
+
+                let valor = Number(quantidade.textContent);
+
+                valor = valor - 1;
+
+                if(valor <= 0){
+
+                    item.remove();
+
+                }else{
+
+                    quantidade.textContent = valor;
+
+                }
+
+                atualizarTotal();
+
+            });
+
+        }
+
+        atualizarTotal();
+
     });
 
 });
+
+
+function atualizarTotal(){
+
+    total = 0;
+
+    const itens = listaCarrinho.querySelectorAll(".item-carrinho");
+
+    itens.forEach(function(item){
+
+        const preco = Number(item.dataset.preco);
+        const quantidade = Number(
+            item.querySelector(".quantidade").textContent
+        );
+
+        total += preco * quantidade;
+
+    });
+
+    textoTotal.textContent =
+        `Total: R$${total.toFixed(2).replace(".", ",")}`;
+
+}
 
 
 /*Diminui o Menu ao rolar para baixo do banner*/
@@ -98,4 +173,14 @@ carrinho.addEventListener("click", () => {
 
 fechar.addEventListener("click", () => {
     lateral.classList.remove("aberto");
+});
+
+document.addEventListener("keydown", function(event){
+
+    if(event.key === "Escape"){
+
+        lateral.classList.remove("aberto");
+
+    }
+
 });
